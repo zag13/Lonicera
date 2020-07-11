@@ -1,0 +1,15 @@
+{
+  "name": "oxo/lonicera",
+  "description": "lonicera",
+  "require": {
+    "php": ">=7.0",
+    "illuminate/database": "5.4.27"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lonicera\\": "Lonicera",
+      "app\\": "app",
+      "library\\": "library"
+    }
+  }
+}
