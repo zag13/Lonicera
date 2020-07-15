@@ -8,12 +8,14 @@
 
 namespace app\front\module\controller;
 
-//require_once _SYS_PATH . 'core/Controller.php';
+require_once _SYS_PATH . 'core/Controller.php';
 
 use app\model\User;
 use library\Container\Container;
 use Lonicera\core\Controller;
 use Lonicera\core\DB;
+
+//use Lonicera\core\DB;
 
 class IndexController extends Controller
 {
@@ -29,9 +31,10 @@ class IndexController extends Controller
 
     public function hiAction()
     {
-//        require_once _SYS_PATH . 'core/DB.php';
+        require_once _SYS_PATH . 'core/DB.php';
         $db = DB::getInstance($GLOBALS['_config']['db']);
         $ret = $db->query('select * from tp_one');
+//        $db2 = new DB($GLOBALS['_config']['db']);
 
 //        $db2 = new DB($GLOBALS['_config']['db']);
 //        $ret2 = $db2->query('select * from tp_one');

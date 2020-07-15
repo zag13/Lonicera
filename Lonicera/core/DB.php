@@ -25,15 +25,19 @@ class DB
     {
         $this->connect($config);
     }
-
-    //todo 单例模式  有缺陷会一直嵌套 感觉是PHPstorm的原因
+    private function __clone(){}
+    private function __wakeup(){}
+    //todo 单例模式  有缺陷会一直嵌套  单例模式的问题？？？
     public static function getInstance($config)
     {
+//        if (null !== self::$instance) {
+//            return self::$instance;
+//        }
+//        self::$instance = $instance = new DB($config);
         if (!self::$instance instanceof self) {
-            self::$instance = new self($config);
+            self::$instance  = $zzz = new self($config);
         }
-
-        return self::$instance;
+        return $zzz;
     }
 
     public function connect($config)
